@@ -1,5 +1,5 @@
 {
-  "geode": "4.2.0",
+  "geode": "4.3.1",
   "version": "v0.7.2",
   "id": "smjs.gdintercept",
   "name": "GDIntercept",
@@ -27,7 +27,8 @@
   "gd": {
     "win": "2.2074",
     "mac": "2.2074",
-    "android": "2.2074"
+    "android": "2.2074",
+    "ios": "2.2074"
   },
   "dependencies": {
     "geode.custom-keybinds": {

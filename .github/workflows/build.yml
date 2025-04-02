@@ -15,6 +15,10 @@ jobs:
         - name: Windows
           os: windows-latest
 
+        - name: iOS
+          os: macos-latest
+          target: iOS
+
         - name: MacOS
           os: macos-latest
 
@@ -38,6 +42,7 @@ jobs:
           build-config: 'Release'
           combine: true
           cli: 'latest'
+          sdk: 'nightly'
           target: ${{ matrix.config.target }}
 
   package-deploy:
