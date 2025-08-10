@@ -146,11 +146,11 @@ void ProxyHandler::registerProxy(ProxyHandler* proxy) {
     if (ProxyHandler::cachedProxies.size() > Mod::get()->getSettingValue<int64_t>("cache-limit")) {
         ProxyHandler* last = ProxyHandler::cachedProxies.back();
 
-        ProxyHandler::cachedProxies.pop_back();
-
         if (last->m_finished) {
             delete last;
         }
+        
+        ProxyHandler::cachedProxies.pop_back();
     }
 }
 

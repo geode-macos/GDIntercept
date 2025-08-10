@@ -110,16 +110,16 @@ void CodeBlock::setup() {
         this->scroll(0, this->getNode()->getContentHeight());
     });
     this->bind("code_page_left"_spr, [this]() {
-        const CullingList* list = as<CullingList*>(this->getNode());
+        const CullingList* list = static_cast<CullingList*>(this->getNode());
         const std::vector<CullingCell*> cells = list->getCells();
 
-        this->scroll(cells.empty() ? 0 : list->getContentWidth() - as<CodeLineCell*>(cells.front())->getCodeLineWidth(), 0);
+        this->scroll(cells.empty() ? 0 : list->getContentWidth() - static_cast<CodeLineCell*>(cells.front())->getCodeLineWidth(), 0);
     });
     this->bind("code_page_right"_spr, [this]() {
-        const CullingList* list = as<CullingList*>(this->getNode());
+        const CullingList* list = static_cast<CullingList*>(this->getNode());
         const std::vector<CullingCell*> cells = list->getCells();
 
-        this->scroll(cells.empty() ? 0 : -(list->getContentWidth() - as<CodeLineCell*>(cells.front())->getCodeLineWidth()), 0);
+        this->scroll(cells.empty() ? 0 : -(list->getContentWidth() - static_cast<CodeLineCell*>(cells.front())->getCodeLineWidth()), 0);
     });
 }
 

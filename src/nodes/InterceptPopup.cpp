@@ -9,7 +9,7 @@ float InterceptPopup::captureCellHeight = 20;
 float InterceptPopup::captureCellBadgeHeight = 10;
 
 InterceptPopup* InterceptPopup::get() {
-    return as<InterceptPopup*>(CCDirector::sharedDirector()->getRunningScene()->getChildByID("intercept_popup"_spr));
+    return static_cast<InterceptPopup*>(CCDirector::sharedDirector()->getRunningScene()->getChildByID("intercept_popup"_spr));
 }
 
 void InterceptPopup::scene() {
@@ -144,5 +144,5 @@ void InterceptPopup::onSettings(CCObject* obj) {
     openSettingsPopup(Mod::get());
 
     // If this breaks, someone should stop messing with addChild, that's a whole lot of not my problem
-    m_settings = as<FLAlertLayer*>(currentScene->getChildren()->objectAtIndex(currentScene->getChildrenCount() - 1));
+    m_settings = static_cast<FLAlertLayer*>(currentScene->getChildren()->objectAtIndex(currentScene->getChildrenCount() - 1));
 }
